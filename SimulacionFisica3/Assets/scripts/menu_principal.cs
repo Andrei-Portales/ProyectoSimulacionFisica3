@@ -10,6 +10,7 @@ public class menu_principal : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     // Update is called once per frame

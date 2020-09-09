@@ -30,4 +30,13 @@ class UtilFunctions {
   }) {
     return voy + a * t;
   }
+
+  static double getY({
+    @required double voy,
+    @required double t,
+    @required double a,
+  }) {
+    return voy * t + ((a*pow(t, 2)) / 2);
+  }
+
 }

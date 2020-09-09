@@ -1,5 +1,4 @@
 import 'package:Simulador/screens/menu-parametros.dart';
-import 'package:Simulador/screens/simulador.dart';
 
 import './screens/main-menu.dart';
 import 'package:flutter/material.dart';

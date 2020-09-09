@@ -24,25 +24,27 @@ class _LineChartSample2State extends State<LineChartSample2> {
       _spots.clear();
       _cells.clear();
 
-      for (double i = -50; i <= 50; i++) {
+      for (double i = 0; i <= 50; i++) {
         await Future.delayed(Duration(milliseconds: 200), () {
           setState(() {
-            double value = double.parse(sin(i).toStringAsPrecision(3));
+            double value = double.parse(cos(i).toStringAsPrecision(3));
 
-            if (value*2 > maxy) {
-              maxy = value *2;
+            if (value * 2 > maxy) {
+              maxy = value * 2;
             }
 
-            if (value*2 < miny) {
-              miny = value*2;
+            if (value * 2 < miny) {
+              miny = value * 2;
             }
 
             _spots.add(FlSpot(i, value));
             _cells.add(
-              DataRow(cells: [
-                DataCell(Text('$i')),
-                DataCell(Text('${value.toStringAsPrecision(3)}')),
-              ]),
+              DataRow(
+                cells: [
+                  DataCell(Text('$i')),
+                  DataCell(Text('${value.toStringAsPrecision(3)}')),
+                ],
+              ),
             );
           });
         });
@@ -71,9 +73,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             children: [
               RaisedButton(
                 child: Text('Start'),
-                onPressed: () {
-                  _addDots();
-                },
+                onPressed: _addDots,
               ),
             ],
           ),

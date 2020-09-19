@@ -1,3 +1,4 @@
+import 'package:Simulador/util/functions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -18,16 +19,17 @@ class _LineChartSample2State extends State<LineChartSample2> {
   double maxy = 0.0;
   double miny = 0.0;
 
+  /// Metodo para poder agregar los puntos a la grafica
   _addDots() async {
     if (!start) {
       start = true;
       _spots.clear();
       _cells.clear();
 
-      for (double i = 0; i <= 50; i++) {
+      for (double i = 0; i < 100; i++) {
         await Future.delayed(Duration(milliseconds: 200), () {
           setState(() {
-            double value = double.parse(cos(i).toStringAsPrecision(3));
+            /* double value = double.parse(cos(i).toStringAsPrecision(3));
 
             if (value * 2 > maxy) {
               maxy = value * 2;
@@ -35,17 +37,27 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
             if (value * 2 < miny) {
               miny = value * 2;
-            }
+            }*/
 
-            _spots.add(FlSpot(i, value));
-            _cells.add(
+            _spots.add(
+              FlSpot(
+                UtilFunctions.getX(
+                    vox: UtilFunctions.getVox(vo: 20, angle: 30), t: i),
+                UtilFunctions.getY(
+                  voy: UtilFunctions.getVoy(vo: 20, angle: 30),
+                  t: i,
+                  a: -9.8,
+                ),
+              ),
+            );
+            /*_cells.add(
               DataRow(
                 cells: [
                   DataCell(Text('$i')),
                   DataCell(Text('${value.toStringAsPrecision(3)}')),
                 ],
               ),
-            );
+            );*/
           });
         });
       }
@@ -104,12 +116,12 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     return LineChartData(
-      maxY: maxy,
-      minY: miny,
+      //maxY: maxy,
+      // minY: miny,
       backgroundColor: Colors.white,
       titlesData: FlTitlesData(
         bottomTitles: SideTitles(
-          showTitles: true,
+          showTitles: false,
           textStyle: TextStyle(color: Colors.white),
         ),
         leftTitles: SideTitles(

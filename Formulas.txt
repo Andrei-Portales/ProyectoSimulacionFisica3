@@ -1,0 +1,29 @@
+/*********************************************************
+* q = carga de la partícula elegida
+* m = masa de la particula elegida
+* (datos que ya estan en el programa)
+*
+* v0 = velocidad inicial
+* 0 = angulo inicial (entre 0 y 90)
+* E = magnitud del campo electrico
+*
+/**********************************************************
+
+Vx = V0 * cos0;
+Vy = V0 * sen0;
+
+ay = -(q*E)/m;          // signo - cuando E sea positivo y + cuando E sea negativo
+
+
+// Funcion:
+// y(x) = (Vy/Vx)*x - 0.5*(ay/(Vx*Vx))*(x*x)
+
+
+for(int i = 0; i<(puntos max); i++){
+
+	y = (Vy/Vx)*i - 0.5*(ay/(Vx*Vx))*(i*i);
+
+	// punto = (i,y)
+
+
+}

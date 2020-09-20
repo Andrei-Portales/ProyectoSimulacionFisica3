@@ -52,6 +52,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
               miny = value * 2;
             }*/
 
+            List<FlSpot> nuevaLista = getGraph();
+            _spots = nuevaLista;
+
             _spots.add(
               FlSpot(
                 UtilFunctions.getX(
@@ -78,7 +81,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     }
   }
 
-  getGraph() {
+  List<FlSpot> getGraph() {
     double velocidadInicial = widget.velocidadInicial;
     double grados = widget.grados;
     double intensidadCampo = widget.intensidadCampo *
@@ -86,9 +89,27 @@ class _LineChartSample2State extends State<LineChartSample2> {
     double masaParticula = widget.datosParticula['mass'];
     double cargaParticula = widget.datosParticula['charge'];
 
+    double velocidadx;
+    double velocidady;
+    double aceleracion;
+    double radianes;
+    double y;
+    List<FlSpot> puntos;
 
-  
+    radianes = (pi * grados) / 180;
 
+    velocidadx = velocidadInicial * cos(radianes);
+    velocidady = velocidadInicial * sin(radianes);
+    aceleracion = (cargaParticula * intensidadCampo) / masaParticula;
+
+    for (double i = 0; i < 10; i++) {
+      y = (velocidady / velocidadx) * i -
+          0.5 * (aceleracion / (velocidadx * velocidadx)) * (i * i);
+
+      puntos.add(FlSpot(i, y));
+    }
+
+    return puntos;
   }
 
   @override

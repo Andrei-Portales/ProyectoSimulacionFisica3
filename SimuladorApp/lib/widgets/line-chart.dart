@@ -36,10 +36,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
   _addDots() async {
     if (!start) {
       start = true;
-      _spots.clear();
       _cells.clear();
 
-      for (double i = 0; i < 100; i++) {
+      setState(() {
+        _spots = getGraph();
+      });
+
+      /* for (double i = 0; i < 100; i++) {
         await Future.delayed(Duration(milliseconds: 200), () {
           setState(() {
             /* double value = double.parse(cos(i).toStringAsPrecision(3));
@@ -52,8 +55,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
               miny = value * 2;
             }*/
 
-            List<FlSpot> nuevaLista = getGraph();
-            _spots = nuevaLista;
+           
+            
 
             _spots.add(
               FlSpot(
@@ -76,7 +79,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
             );*/
           });
         });
-      }
+      }*/
       start = false;
     }
   }
@@ -94,7 +97,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     double aceleracion;
     double radianes;
     double y;
-    List<FlSpot> puntos;
+    List<FlSpot> puntos = []; /// El error era que esta lista solo la habias declarado pero no inicializado
 
     radianes = (pi * grados) / 180;
 

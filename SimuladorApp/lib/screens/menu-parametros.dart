@@ -1,4 +1,5 @@
 import 'package:Simulador/screens/simulador.dart';
+import 'package:Simulador/util/particles-data.dart';
 import 'package:Simulador/widgets/incrementable.dart';
 import 'package:Simulador/widgets/particle.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,12 @@ class MenuParametros extends StatefulWidget {
 enum Sentidos { Positivo, Negativo }
 
 class _MenuParametrosState extends State<MenuParametros> {
-  final direccionController = TextEditingController();
   final List<Sentidos> _sentidos = [Sentidos.Positivo, Sentidos.Negativo];
+
+  // Datos para el calculo de los datos
+  final direccionController = TextEditingController();
+  final velocidadController = TextEditingController();
+  final intensidadController = TextEditingController();
   Sentidos _sentidoValue = Sentidos.Positivo;
   Particula _selectedParticle = Particula.Electron;
 
@@ -50,6 +55,7 @@ class _MenuParametrosState extends State<MenuParametros> {
                       ),
                       child: TextFormField(
                         // keyboardType: TextInputType.number,
+                        controller: velocidadController,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(RegExp("[0-9.e-]"))
                         ],
@@ -81,6 +87,7 @@ class _MenuParametrosState extends State<MenuParametros> {
                       ),
                       child: TextFormField(
                         //keyboardType: TextInputType.number,
+                        controller: intensidadController,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(RegExp("[0-9.e-]"))
                         ],
@@ -161,7 +168,7 @@ class _MenuParametrosState extends State<MenuParametros> {
                     _selectedParticle,
                     _changeSelectedParticle,
                   ),
-                 /* Particle(
+                  /* Particle(
                     "Nucleo de Deuterio",
                     Particula.NucleoDeuterio,
                     'assets/images/electron.jpg',
@@ -189,7 +196,17 @@ class _MenuParametrosState extends State<MenuParametros> {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Simulador()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Simulador(
+                      velocidadInicial: double.parse(velocidadController.text.trim()),
+                      grados: double.parse(direccionController.text.trim()),
+                      intensidadCampo: double.parse(intensidadController.text.trim()),
+                      sentidoCampo: _sentidoValue,
+                      datosParticula: ParticlesData.data[_selectedParticle],
+                    ),
+                  ),
+                );
               },
             ),
             SizedBox(height: 20),

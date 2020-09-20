@@ -1,9 +1,22 @@
+import 'package:Simulador/screens/menu-parametros.dart';
 import 'package:Simulador/util/functions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
 class LineChartSample2 extends StatefulWidget {
+  final double velocidadInicial;
+  final double grados;
+  final double intensidadCampo;
+  final Sentidos sentidoCampo;
+  final Map<String, double> datosParticula;
+  LineChartSample2({
+    @required this.velocidadInicial,
+    @required this.grados,
+    @required this.intensidadCampo,
+    @required this.sentidoCampo,
+    @required this.datosParticula,
+  });
   @override
   _LineChartSample2State createState() => _LineChartSample2State();
 }
@@ -63,6 +76,18 @@ class _LineChartSample2State extends State<LineChartSample2> {
       }
       start = false;
     }
+  }
+
+  getGraph() {
+    double velocidadInicial = widget.velocidadInicial;
+    double grados = widget.grados;
+    double intensidadCampo = widget.intensidadCampo *
+        (widget.sentidoCampo == Sentidos.Positivo ? 1 : -1);
+    double masaParticula = widget.datosParticula['mass'];
+    double cargaParticula = widget.datosParticula['charge'];
+
+
+    
   }
 
   @override

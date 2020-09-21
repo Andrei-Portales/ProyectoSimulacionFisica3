@@ -42,7 +42,14 @@ class _LineChartSample2State extends State<LineChartSample2> {
       _cells.clear();
 
       setState(() {
-        _spots = getGraph();
+        final dots = getGraph();
+        _spots = dots;
+        _cells = dots
+            .map((e) => DataRow(cells: [
+                  DataCell(Text('${e.x}')),
+                  DataCell(Text('${e.y}')),
+                ]))
+            .toList();
       });
 
       start = false;
@@ -108,23 +115,26 @@ class _LineChartSample2State extends State<LineChartSample2> {
             ],
           ),
           Container(
+            height: 500,
             margin: EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: DataTable(
-              columns: [
-                DataColumn(
-                  label: Text("Tiempo"),
-                  numeric: true,
-                ),
-                DataColumn(
-                  label: Text("Posicion"),
-                  numeric: true,
-                ),
-              ],
-              rows: _cells,
+            child: SingleChildScrollView(
+                          child: DataTable(
+                columns: [
+                  DataColumn(
+                    label: Text("Tiempo"),
+                    numeric: true,
+                  ),
+                  DataColumn(
+                    label: Text("Posicion"),
+                    numeric: true,
+                  ),
+                ],
+                rows: _cells,
+              ),
             ),
           ),
         ],
@@ -134,8 +144,6 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     return LineChartData(
-      //maxY: maxy,
-      // minY: miny,
       backgroundColor: Colors.white,
       titlesData: FlTitlesData(
         bottomTitles: SideTitles(

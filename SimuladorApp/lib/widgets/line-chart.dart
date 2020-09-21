@@ -46,8 +46,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
         _spots = dots;
         _cells = dots
             .map((e) => DataRow(cells: [
-                  DataCell(Text('${e.x}')),
-                  DataCell(Text('${e.y}')),
+                  DataCell(SelectableText('${e.x}')),
+                  DataCell(SelectableText('${e.y}')),
                 ]))
             .toList();
       });
@@ -122,7 +122,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: SingleChildScrollView(
-                          child: DataTable(
+              child: DataTable(
                 columns: [
                   DataColumn(
                     label: Text("Tiempo"),

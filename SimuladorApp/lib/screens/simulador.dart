@@ -9,6 +9,7 @@ class Simulador extends StatelessWidget {
   final double intensidadCampo;
   final Sentidos sentidoCampo;
   final Map<String, double> datosParticula;
+  final int puntos;
 
   Simulador({
     @required this.velocidadInicial,
@@ -16,6 +17,7 @@ class Simulador extends StatelessWidget {
     @required this.intensidadCampo,
     @required this.sentidoCampo,
     @required this.datosParticula,
+    @required this.puntos,
   });
 
   @override
@@ -34,6 +36,7 @@ class Simulador extends StatelessWidget {
           intensidadCampo: this.intensidadCampo,
           sentidoCampo: this.sentidoCampo,
           datosParticula: this.datosParticula,
+          puntos: this.puntos,
         ),
       ),
     );

@@ -10,12 +10,15 @@ class LineChartSample2 extends StatefulWidget {
   final double intensidadCampo;
   final Sentidos sentidoCampo;
   final Map<String, double> datosParticula;
+  final int puntos;
+
   LineChartSample2({
     @required this.velocidadInicial,
     @required this.grados,
     @required this.intensidadCampo,
     @required this.sentidoCampo,
     @required this.datosParticula,
+    @required this.puntos,
   });
   @override
   _LineChartSample2State createState() => _LineChartSample2State();
@@ -59,8 +62,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
     double aceleracion;
     double radianes;
     double y;
-    
-    List<FlSpot> puntos = []; /// El error era que esta lista solo la habias declarado pero no inicializado
+
+    List<FlSpot> puntos = [];
+
+    /// El error era que esta lista solo la habias declarado pero no inicializado
 
     radianes = (pi * grados) / 180;
 
@@ -68,7 +73,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     velocidady = velocidadInicial * sin(radianes);
     aceleracion = (cargaParticula * intensidadCampo) / masaParticula;
 
-    for (double i = 0; i < 10; i++) {
+    for (double i = 0; i < widget.puntos; i++) {
       y = (velocidady / velocidadx) * i -
           0.5 * (aceleracion / (velocidadx * velocidadx)) * (i * i);
 

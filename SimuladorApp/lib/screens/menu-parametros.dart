@@ -20,6 +20,7 @@ class _MenuParametrosState extends State<MenuParametros> {
   final direccionController = TextEditingController();
   final velocidadController = TextEditingController();
   final intensidadController = TextEditingController();
+  final puntosController = TextEditingController();
   Sentidos _sentidoValue = Sentidos.Positivo;
   Particula _selectedParticle = Particula.Electron;
 
@@ -27,6 +28,12 @@ class _MenuParametrosState extends State<MenuParametros> {
     setState(() {
       _selectedParticle = particula;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    puntosController.text = '10';
   }
 
   @override
@@ -124,6 +131,23 @@ class _MenuParametrosState extends State<MenuParametros> {
                         ],
                       ),
                     ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Text('Puntos:', style: TextStyle(fontSize: 20)),
+                          SizedBox(width: 10),
+                          Container(
+                            width: 100,
+                            child: TextField(
+                              textAlign: TextAlign.center,
+                              inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
+                              controller: puntosController,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     SizedBox(height: 10),
                   ],
                 ),
@@ -168,7 +192,6 @@ class _MenuParametrosState extends State<MenuParametros> {
                     _selectedParticle,
                     _changeSelectedParticle,
                   ),
-                 
                 ],
               ),
             ),
@@ -186,11 +209,14 @@ class _MenuParametrosState extends State<MenuParametros> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => Simulador(
-                      velocidadInicial: double.parse(velocidadController.text.trim()),
+                      velocidadInicial:
+                          double.parse(velocidadController.text.trim()),
                       grados: double.parse(direccionController.text.trim()),
-                      intensidadCampo: double.parse(intensidadController.text.trim()),
+                      intensidadCampo:
+                          double.parse(intensidadController.text.trim()),
                       sentidoCampo: _sentidoValue,
                       datosParticula: ParticlesData.data[_selectedParticle],
+                      puntos: int.parse(puntosController.text.trim()),
                     ),
                   ),
                 );

@@ -135,13 +135,16 @@ class _MenuParametrosState extends State<MenuParametros> {
                       margin: EdgeInsets.all(10),
                       child: Row(
                         children: [
-                          Text('Puntos:', style: TextStyle(fontSize: 20)),
+                          Text('Tiempo:', style: TextStyle(fontSize: 20)),
                           SizedBox(width: 10),
                           Container(
                             width: 100,
                             child: TextField(
                               textAlign: TextAlign.center,
-                              inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9]'))
+                              ],
                               controller: puntosController,
                             ),
                           ),

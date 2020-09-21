@@ -69,6 +69,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     double aceleracion;
     double radianes;
     double y;
+    double x;
 
     List<FlSpot> puntos = [];
 
@@ -80,11 +81,14 @@ class _LineChartSample2State extends State<LineChartSample2> {
     velocidady = velocidadInicial * sin(radianes);
     aceleracion = (cargaParticula * intensidadCampo) / masaParticula;
 
-    for (double i = 0; i < widget.puntos; i++) {
-      y = (velocidady / velocidadx) * i -
-          0.5 * (aceleracion / (velocidadx * velocidadx)) * (i * i);
+    for (double i = -widget.puntos.toDouble(); i < widget.puntos; i++) {
+      //y = (velocidady / velocidadx) * i -
+      //  0.5 * (aceleracion / (velocidadx * velocidadx)) * (i * i);
 
-      puntos.add(FlSpot(i, y));
+      x = velocidadx * i;
+      y = velocidady * i - 0.5 * aceleracion * (i * i);
+
+      puntos.add(FlSpot(x, y));
     }
 
     return puntos;

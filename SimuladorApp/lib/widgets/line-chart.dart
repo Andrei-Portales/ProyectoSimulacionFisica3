@@ -46,8 +46,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
         _spots = dots;
         _cells = dots
             .map((e) => DataRow(cells: [
-                  DataCell(SelectableText('${e.x}')),
-                  DataCell(SelectableText('${e.y}')),
+                  DataCell(SelectableText('${e.x.toStringAsPrecision(3)}')),
+                  DataCell(SelectableText('${e.y.toStringAsPrecision(3)}')),
                 ]))
             .toList();
       });
@@ -88,7 +88,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
       x = velocidadx * i;
       y = velocidady * i - 0.5 * aceleracion * (i * i);
 
-      puntos.add(FlSpot(x, y));
+      puntos.add(FlSpot(double.parse(x.toStringAsPrecision(3)), double.parse(y.toStringAsPrecision(3))));
     }
 
     return puntos;

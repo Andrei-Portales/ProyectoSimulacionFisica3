@@ -31,7 +31,7 @@ class Particle extends StatelessWidget {
               ? Border.all(color: Colors.red, width: 5)
               : Border.all(color: Colors.white, width: 1),
           image: DecorationImage(
-            image: AssetImage('assets/images/electron.jpg'),
+            image: AssetImage(this.image),
             fit: BoxFit.fill,
           ),
         ),

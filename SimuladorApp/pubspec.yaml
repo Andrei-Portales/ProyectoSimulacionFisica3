@@ -51,6 +51,10 @@ flutter:
     - assets/images/logo_transparente.png
     - assets/images/opcion1.jpg
     - assets/images/electron.jpg
+    - assets/images/positron.jpg
+    - assets/images/proton.jpg
+    - assets/images/neutron.jpg
+    - assets/images/particula_alfa.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

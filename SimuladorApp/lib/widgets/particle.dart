@@ -1,3 +1,7 @@
+
+/// Esta clase modela una particula en el codigo, de esta forma podemos tener 
+/// Mejor control de las particulas
+
 import 'package:flutter/material.dart';
 
 enum Particula {

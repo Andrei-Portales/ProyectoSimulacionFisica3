@@ -1,5 +1,9 @@
 import 'package:Simulador/widgets/particle.dart';
 
+/// Esta clase contiene toda la informacion de las particulas que se
+/// utilizaran en el programa, con su masa y su carga electrica
+
+
 class ParticlesData {
   static const Map<Particula, Map<String, double>> data = {
     Particula.Electron: {'mass': 9.10938291e-31, 'charge': -1.602176565e-19},

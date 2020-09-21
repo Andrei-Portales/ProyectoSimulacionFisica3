@@ -1,5 +1,4 @@
 import 'package:Simulador/screens/menu-parametros.dart';
-import 'package:Simulador/util/functions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -56,6 +55,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     }
   }
 
+  /// Metodo para calcular todos los puntos de la grafica para la trayectoria
   List<FlSpot> getGraph() {
     double velocidadInicial = widget.velocidadInicial;
     double grados = widget.grados;

@@ -24,6 +24,7 @@ class _MenuParametrosState extends State<MenuParametros> {
   Sentidos _sentidoValue = Sentidos.Positivo;
   Particula _selectedParticle = Particula.Electron;
 
+  /// Metodo para cambiar la particula elejida
   _changeSelectedParticle(Particula particula) {
     setState(() {
       _selectedParticle = particula;
@@ -162,6 +163,9 @@ class _MenuParametrosState extends State<MenuParametros> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
+                  /*
+                  *  Particulas que se mostraran en la pantalla
+                  */
                   Particle(
                     "Electrón",
                     Particula.Electron,

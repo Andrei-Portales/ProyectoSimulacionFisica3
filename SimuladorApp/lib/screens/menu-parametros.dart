@@ -148,6 +148,8 @@ class _MenuParametrosState extends State<MenuParametros> {
                               controller: puntosController,
                             ),
                           ),
+                          SizedBox(width: 10),
+                          Text('Segundos', style: TextStyle(fontSize: 20)),
                         ],
                       ),
                     ),

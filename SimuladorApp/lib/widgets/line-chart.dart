@@ -129,11 +129,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
               child: DataTable(
                 columns: [
                   DataColumn(
-                    label: Text("Tiempo"),
+                    label: Text("Posicion 'X'"),
                     numeric: true,
                   ),
                   DataColumn(
-                    label: Text("Posicion"),
+                    label: Text("Posicion 'Y'"),
                     numeric: true,
                   ),
                 ],

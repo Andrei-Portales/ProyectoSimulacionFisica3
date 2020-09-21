@@ -8,7 +8,12 @@ enum Particula {
   ParticulaAlfa,
   NucleoDeuterio,
   Muon,
+  Tauon,
+  Meson,
+  Lambda,
+  Sigma,
 }
+
 
 class Particle extends StatelessWidget {
   String title;

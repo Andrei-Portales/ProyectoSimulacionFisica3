@@ -55,6 +55,11 @@ flutter:
     - assets/images/proton.jpg
     - assets/images/neutron.jpg
     - assets/images/particula_alfa.jpg
+    - assets/images/lambda.png
+    - assets/images/meson.png
+    - assets/images/moun.gif
+    - assets/images/sigma.png
+    - assets/images/tauon.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

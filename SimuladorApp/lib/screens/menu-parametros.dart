@@ -195,6 +195,49 @@ class _MenuParametrosState extends State<MenuParametros> {
                     _selectedParticle,
                     _changeSelectedParticle,
                   ),
+
+                  /*
+- 
+    - 
+    - 
+    - 
+    - 
+                  */
+                  Particle(
+                    "Lambda",
+                    Particula.Lambda,
+                    'assets/images/lambda.png',
+                    _selectedParticle,
+                    _changeSelectedParticle,
+                  ),
+                  Particle(
+                    "Meson",
+                    Particula.Meson,
+                    'assets/images/meson.png',
+                    _selectedParticle,
+                    _changeSelectedParticle,
+                  ),
+                  Particle(
+                    "Muon",
+                    Particula.Muon,
+                    'assets/images/moun.gif',
+                    _selectedParticle,
+                    _changeSelectedParticle,
+                  ),
+                  Particle(
+                    "Sigma",
+                    Particula.Sigma,
+                    'assets/images/sigma.png',
+                    _selectedParticle,
+                    _changeSelectedParticle,
+                  ),
+                  Particle(
+                    "Tauon",
+                    Particula.Tauon,
+                    'assets/images/tauon.jpg',
+                    _selectedParticle,
+                    _changeSelectedParticle,
+                  ),
                 ],
               ),
             ),

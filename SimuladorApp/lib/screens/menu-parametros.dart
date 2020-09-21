@@ -195,14 +195,6 @@ class _MenuParametrosState extends State<MenuParametros> {
                     _selectedParticle,
                     _changeSelectedParticle,
                   ),
-
-                  /*
-- 
-    - 
-    - 
-    - 
-    - 
-                  */
                   Particle(
                     "Lambda",
                     Particula.Lambda,

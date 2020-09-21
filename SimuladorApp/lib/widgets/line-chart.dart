@@ -73,7 +73,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
     List<FlSpot> puntos = [];
 
-    /// El error era que esta lista solo la habias declarado pero no inicializado
+    
 
     radianes = (pi * grados) / 180;
 

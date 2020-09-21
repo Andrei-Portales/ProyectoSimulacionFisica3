@@ -168,20 +168,7 @@ class _MenuParametrosState extends State<MenuParametros> {
                     _selectedParticle,
                     _changeSelectedParticle,
                   ),
-                  /* Particle(
-                    "Nucleo de Deuterio",
-                    Particula.NucleoDeuterio,
-                    'assets/images/electron.jpg',
-                    _selectedParticle,
-                    _changeSelectedParticle,
-                  ),
-                  Particle(
-                    "Muón",
-                    Particula.Muon,
-                    'assets/images/electron.jpg',
-                    _selectedParticle,
-                    _changeSelectedParticle,
-                  ),*/
+                 
                 ],
               ),
             ),

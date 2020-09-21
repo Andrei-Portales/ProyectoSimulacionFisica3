@@ -42,44 +42,6 @@ class _LineChartSample2State extends State<LineChartSample2> {
         _spots = getGraph();
       });
 
-      /* for (double i = 0; i < 100; i++) {
-        await Future.delayed(Duration(milliseconds: 200), () {
-          setState(() {
-            /* double value = double.parse(cos(i).toStringAsPrecision(3));
-
-            if (value * 2 > maxy) {
-              maxy = value * 2;
-            }
-
-            if (value * 2 < miny) {
-              miny = value * 2;
-            }*/
-
-           
-            
-
-            _spots.add(
-              FlSpot(
-                UtilFunctions.getX(
-                    vox: UtilFunctions.getVox(vo: 20, angle: 30), t: i),
-                UtilFunctions.getY(
-                  voy: UtilFunctions.getVoy(vo: 20, angle: 30),
-                  t: i,
-                  a: -9.8,
-                ),
-              ),
-            );
-            /*_cells.add(
-              DataRow(
-                cells: [
-                  DataCell(Text('$i')),
-                  DataCell(Text('${value.toStringAsPrecision(3)}')),
-                ],
-              ),
-            );*/
-          });
-        });
-      }*/
       start = false;
     }
   }
@@ -97,6 +59,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
     double aceleracion;
     double radianes;
     double y;
+    
     List<FlSpot> puntos = []; /// El error era que esta lista solo la habias declarado pero no inicializado
 
     radianes = (pi * grados) / 180;
@@ -149,11 +112,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
               columns: [
                 DataColumn(
                   label: Text("Tiempo"),
-                  numeric: false,
+                  numeric: true,
                 ),
                 DataColumn(
                   label: Text("Posicion"),
-                  numeric: false,
+                  numeric: true,
                 ),
               ],
               rows: _cells,
@@ -171,11 +134,11 @@ class _LineChartSample2State extends State<LineChartSample2> {
       backgroundColor: Colors.white,
       titlesData: FlTitlesData(
         bottomTitles: SideTitles(
-          showTitles: false,
+          showTitles: true,
           textStyle: TextStyle(color: Colors.white),
         ),
         leftTitles: SideTitles(
-          showTitles: false,
+          showTitles: true,
           textStyle: TextStyle(color: Colors.white),
         ),
       ),

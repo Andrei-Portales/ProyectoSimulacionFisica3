@@ -27,9 +27,14 @@ class LineChartSample2 extends StatefulWidget {
   _LineChartSample2State createState() => _LineChartSample2State();
 }
 
-class _LineChartSample2State extends State<LineChartSample2> {
+class _LineChartSample2State extends State<LineChartSample2>
+    with TickerProviderStateMixin {
   List<Color> gradientColors = [Colors.white];
+
   List<FlSpot> _spots = [
+    FlSpot(0, 0),
+  ];
+  List<FlSpot> _provSpots = [
     FlSpot(0, 0),
   ];
   bool start = false;
@@ -39,7 +44,6 @@ class _LineChartSample2State extends State<LineChartSample2> {
   double _minY = -1;
 
   List<DataRow> _cells = [];
-  
 
   /// Metodo para poder agregar los puntos a la grafica
   _addDots() async {
@@ -47,9 +51,17 @@ class _LineChartSample2State extends State<LineChartSample2> {
       start = true;
       _cells.clear();
 
+      final dots = getGraph();
       setState(() {
-        final dots = getGraph();
-        _spots = dots;
+        _spots = [dots[0]];
+      });
+
+      setState(() {
+        for (int i = 1; i < dots.length; i++) {
+          Future.delayed(Duration(milliseconds: 500))
+              .then((value) => setState(() => _spots.add(dots[i])));
+        }
+
         _cells = dots
             .map((e) => DataRow(cells: [
                   DataCell(SelectableText('${e.x.toStringAsPrecision(3)}')),

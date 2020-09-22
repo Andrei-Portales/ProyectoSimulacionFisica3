@@ -8,8 +8,10 @@ class LineChartSample2 extends StatefulWidget {
   final double grados;
   final double intensidadCampo;
   final Sentidos sentidoCampo;
-  final Map<String, double> datosParticula;
+  final Map<String, dynamic> datosParticula;
   final int puntos;
+  final Function changeDownload;
+  Function setData;
 
   LineChartSample2({
     @required this.velocidadInicial,
@@ -18,6 +20,8 @@ class LineChartSample2 extends StatefulWidget {
     @required this.sentidoCampo,
     @required this.datosParticula,
     @required this.puntos,
+    @required this.changeDownload,
+    @required this.setData,
   });
   @override
   _LineChartSample2State createState() => _LineChartSample2State();
@@ -50,7 +54,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                 ]))
             .toList();
       });
-
+      this.widget.changeDownload();
       start = false;
     }
   }
@@ -88,6 +92,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
       puntos.add(FlSpot(double.parse(x.toStringAsPrecision(3)),
           double.parse(y.toStringAsPrecision(3))));
+
+      widget.setData(puntos
+          .map((e) => [e.x.toStringAsPrecision(3), e.y.toStringAsPrecision(3)])
+          .toList());
     }
 
     return puntos;

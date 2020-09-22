@@ -46,7 +46,7 @@ class _SimuladorState extends State<Simulador> {
   _downloadFunction() {
     String csv = const ListToCsvConverter().convert([
       ['Velocidad incial: ${widget.velocidadInicial} m/s'],
-      ['Grados iniciales; ${widget.grados} grados'],
+      ['Grados iniciales: ${widget.grados} grados'],
       ['Intensidad del campo: ${widget.intensidadCampo} N/C'],
       [
         'Sentido del campo: ${widget.sentidoCampo == Sentidos.Positivo ? 'Positivo' : 'Negativo'}'

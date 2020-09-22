@@ -30379,7 +30379,7 @@ ha:function(a,b){this.e=b},
 va:function(){this.ar(new U.a1h(this))},
 Os:function(){var s,r,q,p,o=this,n=H.a([],t.zZ)
 n.push(["Velocidad incial: "+H.b(o.a.c)+" m/s"])
-n.push(["Grados iniciales; "+H.b(o.a.d)+" grados"])
+n.push(["Grados iniciales: "+H.b(o.a.d)+" grados"])
 n.push(["Intensidad del campo: "+H.b(o.a.e)+" N/C"])
 n.push(["Sentido del campo: "+(o.a.f===C.iX?"Positivo":"Negativo")])
 n.push(["Datos de la particula: "+H.b(o.a.r)])

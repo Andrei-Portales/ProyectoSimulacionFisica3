@@ -63,7 +63,7 @@ class _SimuladorState extends State<Simulador> {
     final content = base64Encode(rawData);
     AnchorElement(
         href: "data:application/octet-stream;charset=utf-16le;base64,$content")
-      ..setAttribute("download", "data.txt")
+      ..setAttribute("download", "${widget.datosParticula['name']}_data.txt")
       ..click();
   }
 

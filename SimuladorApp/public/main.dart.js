@@ -30390,7 +30390,7 @@ n.push([])
 for(s=o.e,r=s.length,q=0;q<s.length;s.length===r||(0,H.C)(s),++q)n.push(s[q])
 p=C.wj.d4(n)
 n=W.a6G("data:application/octet-stream;charset=utf-16le;base64,"+C.pZ.gkQ().d4(new H.jh(p)))
-n.setAttribute("download","data.txt")
+n.setAttribute("download",H.b(o.a.r.h(0,"name"))+"_data.txt")
 n.click()},
 K:function(a,b){var s=this,r=null,q=C.eB.h(0,800),p=L.cB("Simulador",r,r,r,r,r),o=H.a([],t.t)
 if(s.d)o.push(B.Pm(r,L.n7(C.yO,C.j,r),s.gOr(),r))

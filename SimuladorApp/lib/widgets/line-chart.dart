@@ -33,10 +33,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
     FlSpot(0, 0),
   ];
   bool start = false;
+  double _maxX = 1;
+  double _minX = -1;
+  double _maxY = 1;
+  double _minY = -1;
 
   List<DataRow> _cells = [];
-  double maxy = 0.0;
-  double miny = 0.0;
+  
 
   /// Metodo para poder agregar los puntos a la grafica
   _addDots() async {
@@ -90,9 +93,28 @@ class _LineChartSample2State extends State<LineChartSample2> {
       if (grados == 90) {
         x = 0;
         y = velocidady * i - 0.5 * aceleracion * (i * i);
+      } else if (grados == 0) {
+        x = velocidadx * i;
+        y = 0;
       } else {
         x = velocidadx * i;
         y = velocidady * i - 0.5 * aceleracion * (i * i);
+      }
+
+      if (x > _maxX) {
+        _maxX = x + 1;
+      }
+
+      if (x < _minX) {
+        _minX = x - 1;
+      }
+
+      if (y > _maxY) {
+        _maxY = y + 1;
+      }
+
+      if (y < _minY) {
+        _minY = y - 1;
       }
 
       puntos.add(FlSpot(double.parse(x.toStringAsPrecision(3)),
@@ -160,6 +182,10 @@ class _LineChartSample2State extends State<LineChartSample2> {
 
   LineChartData mainData() {
     return LineChartData(
+      maxX: _maxX,
+      minX: _minX,
+      maxY: _maxY,
+      minY: _minY,
       backgroundColor: Colors.white,
       titlesData: FlTitlesData(
         bottomTitles: SideTitles(

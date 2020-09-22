@@ -30468,20 +30468,19 @@ q.ar(new M.a_8(q))
 q.a.va()
 q.f=!1}return P.az(null,r)}})
 return P.aA($async$rS,r)},
-I8:function(){var s,r,q,p,o,n,m=this,l=m.a,k=l.c,j=l.d,i=l.e,h=l.f===C.iX?1:-1,g=l.r.h(0,"mass"),f=m.a.r.h(0,"charge"),e=H.a([],t.lq),d=3.141592653589793*j/180,c=k*Math.cos(d),b=k*Math.sin(d)
-l=m.a.x
-l.toString
-s=-l
-l=t.kc
-r=l.i("aI.E")
-h=0.5*(f*(i*h)/g)
-i=j===90
-for(;s<=m.a.x;++s){q=b*s
-p=h*(s*s)
-if(i){o=q-p
-n=0}else{n=c*s
-o=q-p}e.push(new O.bA(P.hR(C.d.jM(n,3)),P.hR(C.d.jM(o,3))))
-m.a.ha(0,P.Z(new H.an(e,new M.a_9(),l),!0,r))}return e},
+I8:function(){var s,r,q,p,o,n=this,m=n.a,l=m.c,k=m.d,j=m.e,i=m.f===C.iX?1:-1,h=m.r.h(0,"mass"),g=n.a.r.h(0,"charge"),f=H.a([],t.lq),e=3.141592653589793*k/180,d=l*Math.cos(e),c=l*Math.sin(e)
+m=n.a.x
+m.toString
+s=-m
+m=t.kc
+r=m.i("aI.E")
+i=0.5*(g*(j*i)/h)
+j=k===0
+q=k===90
+for(;s<=n.a.x;++s){if(q){p=c*s-i*(s*s)
+o=0}else{o=d*s
+p=j?0:c*s-i*(s*s)}f.push(new O.bA(P.hR(C.d.jM(o,3)),P.hR(C.d.jM(p,3))))
+n.a.ha(0,P.Z(new H.an(f,new M.a_9(),m),!0,r))}return f},
 K:function(a,b){var s,r,q,p,o=null,n=K.fk(10)
 n=M.bh(o,new V.rR(this.a_A(),C.aj,C.cy,o,o),o,o,new S.c3(C.n,o,o,n,o,o,C.I),o,o,new V.ak(0,10,0,0),new V.ak(15,15,15,15),o,1/0)
 s=t.t

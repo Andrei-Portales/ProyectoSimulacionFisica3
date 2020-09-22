@@ -19,14 +19,14 @@ const RESOURCES = {
 "assets/assets/images/tauon.jpg": "85557117285ee442ac887a2bb8b038b9",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "a68d2a28c526b3b070aefca4bac93d25",
-"assets/NOTICES": "deb0320bd69bb3a1ebb141b7cd1f3b63",
+"assets/NOTICES": "faa09900a1f9e936cd7705271c546901",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "671cd375bf7c6656e0e805320d5dde36",
-"/": "671cd375bf7c6656e0e805320d5dde36",
-"main.dart.js": "907e8b560870920dd8da69a6ed8c263a",
+"index.html": "1fd5ba4a2f24d8042d4d42c1a3ff853c",
+"/": "1fd5ba4a2f24d8042d4d42c1a3ff853c",
+"main.dart.js": "3360affb5f5f4d962847a7b0f4bc1db4",
 "manifest.json": "5b2e571ccaeff187fa3c2eed66406984"
 };
 

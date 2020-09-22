@@ -87,8 +87,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
       //y = (velocidady / velocidadx) * i -
       //  0.5 * (aceleracion / (velocidadx * velocidadx)) * (i * i);
 
-      x = velocidadx * i;
-      y = velocidady * i - 0.5 * aceleracion * (i * i);
+      if (grados == 90) {
+        x = 0;
+        y = velocidady * i - 0.5 * aceleracion * (i * i);
+      } else {
+        x = velocidadx * i;
+        y = velocidady * i - 0.5 * aceleracion * (i * i);
+      }
 
       puntos.add(FlSpot(double.parse(x.toStringAsPrecision(3)),
           double.parse(y.toStringAsPrecision(3))));

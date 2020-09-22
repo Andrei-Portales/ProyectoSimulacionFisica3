@@ -30468,15 +30468,20 @@ q.ar(new M.a_8(q))
 q.a.va()
 q.f=!1}return P.az(null,r)}})
 return P.aA($async$rS,r)},
-I8:function(){var s,r=this,q=r.a,p=q.c,o=q.d,n=q.e,m=q.f===C.iX?1:-1,l=q.r.h(0,"mass"),k=r.a.r.h(0,"charge"),j=H.a([],t.lq),i=3.141592653589793*o/180,h=p*Math.cos(i),g=p*Math.sin(i)
-q=r.a.x
-q.toString
-s=-q
-m=0.5*(k*(n*m)/l)
-n=t.kc
-q=n.i("aI.E")
-for(;s<=r.a.x;++s){j.push(new O.bA(P.hR(C.d.jM(h*s,3)),P.hR(C.d.jM(g*s-m*(s*s),3))))
-r.a.ha(0,P.Z(new H.an(j,new M.a_9(),n),!0,q))}return j},
+I8:function(){var s,r,q,p,o,n,m=this,l=m.a,k=l.c,j=l.d,i=l.e,h=l.f===C.iX?1:-1,g=l.r.h(0,"mass"),f=m.a.r.h(0,"charge"),e=H.a([],t.lq),d=3.141592653589793*j/180,c=k*Math.cos(d),b=k*Math.sin(d)
+l=m.a.x
+l.toString
+s=-l
+l=t.kc
+r=l.i("aI.E")
+h=0.5*(f*(i*h)/g)
+i=j===90
+for(;s<=m.a.x;++s){q=b*s
+p=h*(s*s)
+if(i){o=q-p
+n=0}else{n=c*s
+o=q-p}e.push(new O.bA(P.hR(C.d.jM(n,3)),P.hR(C.d.jM(o,3))))
+m.a.ha(0,P.Z(new H.an(e,new M.a_9(),l),!0,r))}return e},
 K:function(a,b){var s,r,q,p,o=null,n=K.fk(10)
 n=M.bh(o,new V.rR(this.a_A(),C.aj,C.cy,o,o),o,o,new S.c3(C.n,o,o,n,o,o,C.I),o,o,new V.ak(0,10,0,0),new V.ak(15,15,15,15),o,1/0)
 s=t.t

@@ -30367,7 +30367,7 @@ q=r.a.x
 q.toString
 s=-q
 m=0.5*(k*(n*m)/l)
-for(;s<r.a.x;++s)j.push(new O.bL(P.hQ(C.d.jK(h*s,3)),P.hQ(C.d.jK(g*s-m*(s*s),3))))
+for(;s<=r.a.x;++s)j.push(new O.bL(P.hQ(C.d.jK(h*s,3)),P.hQ(C.d.jK(g*s-m*(s*s),3))))
 return j},
 K:function(a,b){var s,r,q,p,o=null,n=K.fk(10)
 n=M.bh(o,new V.rQ(this.a_s(),C.aj,C.cy,o,o),o,o,new S.c2(C.n,o,o,n,o,o,C.I),o,o,new V.ak(0,10,0,0),new V.ak(15,15,15,15),o,1/0)
